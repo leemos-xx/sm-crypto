@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dist/sm4.js" ></script>
+    <script type="text/javascript">
+        var msg = 'cbc supported...';
+        var key = '0123456789abcdeffedcba9876543255';
+
+        var encryptData = sm4.encrypt(msg, key, {mode: 0, iv: "aaaaaaaaaaaaaaaaaaaaaa6666666666"});
+        console.log(encryptData);
+        console.log(sm4.decrypt(encryptData, key, {mode: 0, iv: "aaaaaaaaaaaaaaaaaaaaaa6666666666"}));
+
+        var encryptData2 = sm4.encrypt(msg, key, {mode: 1});
+        console.log(encryptData2);
+        console.log(sm4.decrypt(encryptData2, key, {mode: 1}));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
